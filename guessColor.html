@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="guessColor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Guess the color!</title>
+</head>
+<body>
+
+    <h1>Guess The<br><span id="colorDisplay">RGB</span><br>Color</h1>
+
+    <div id="stripe">
+        <button id="reset">New Colors</button>
+        <span id="message"></span>
+        <div class="dropDown">
+            <button id="dropBtn"><i class="fa fa-th"></i></button>
+            <div class="dropDownContent">
+                <button class="mode">Easy</button>
+                <button class="mode selected">Medium</button>
+                <button class="mode">Hard</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+   
+
+<script type="text/javascript" src="guessColor.js"></script>
+</body>
+</html>
