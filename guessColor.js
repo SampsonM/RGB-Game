@@ -1,6 +1,7 @@
 let numSquares = 6;
 let colors = [];
 let pickedColor;
+let winstatus;
 let squares = document.querySelectorAll('.square');
 let colorDisplay = document.getElementById('colorDisplay');
 let messageDisplay = document.getElementById('message');
@@ -52,13 +53,14 @@ function setUpSquares() {
             //grab color of clicked square
             let clickedColor = this.style.backgroundColor;
             //compare color to clicked color CHECK IF WON
-            if (clickedColor === pickedColor) {
+            if (clickedColor === pickedColor && !winstatus) {
+                winstatus = true;
                 messageDisplay.textContent = "correct";
                 changeColors(clickedColor);
                 h1.style.backgroundColor = clickedColor;
                 resetButton.textContent = "Play again?";
                 flash();
-             } else {
+             } else if (!winstatus) {
                 this.style.backgroundColor = "#232323";
                 messageDisplay.textContent = "try Again";
              }
@@ -68,6 +70,7 @@ function setUpSquares() {
 
 //gives new colours and squares depending on numSquares val
 function reset() {
+    winstatus = false;
     colors = generateRandomColors(numSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
